@@ -1,0 +1,225 @@
+.home-page {
+  display: flex;
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  /* Background now handled globally */
+}
+
+.home-page .container {
+  display: flex;
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+}
+
+.hero-content {
+  max-width: 900px; /* Slightly wider for better content display */
+  text-align: center; /* Back to center */
+  position: relative; /* Added for background animation positioning */
+  padding: 2rem 1rem; /* Add proper padding */
+}
+
+.hero-title {
+  font-size: clamp(2.8rem, 6vw, 4rem); /* Larger, more impactful */
+  font-weight: 800; /* Bolder */
+  margin-bottom: 2rem; /* Increased margin for better spacing */
+  background: linear-gradient(135deg, #fff 0%, #18d26e 50%, #00ff88 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: titleFadeIn 1s ease-out 0.2s forwards;
+  opacity: 0;
+  letter-spacing: -0.02em; /* Tighter letter spacing for modern look */
+  text-align: center; /* Center the title */
+}
+
+.hero-subtitle {
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem); /* Larger subtitle */
+  color: rgba(255, 255, 255, 0.9); /* Brighter for better readability */
+  font-weight: 400;
+  line-height: 1.4;
+  animation: subtitleFadeIn 1s ease-out 0.4s forwards;
+  opacity: 0;
+  text-align: center; /* Center the subtitle */
+  margin-bottom: 2rem; /* Added margin for spacing */
+}
+
+.hero-description {
+  font-size: 1.5rem;
+  color: var(--color-text);
+  margin-bottom: 2rem;
+  opacity: 0;
+  animation: descriptionFadeIn 0.8s ease-out 0.6s forwards;
+}
+
+.about-author {
+  text-align: center; /* Center align the content paragraphs */
+  max-width: 750px; /* Constrain width for better readability */
+  margin: 2rem auto; /* Increased top margin for better spacing */
+}
+
+.about-line {
+  position: relative;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: clamp(1.05rem, 2vw, 1.15rem); /* Slightly smaller for better readability */
+  line-height: 1.7; /* Better line height for readability */
+  opacity: 0;
+  animation: lineFadeIn 0.8s ease-out forwards;
+  transition: all 0.3s ease;
+  text-align: center; /* Fixed - consistent center alignment */
+  max-width: 100%; /* Ensure full width utilization */
+  margin-bottom: 1.5rem; /* Added consistent margin */
+}
+
+.about-line:hover {
+  color: #18d26e; /* Green accent on hover */
+  transform: translateY(-2px); /* Subtle lift effect */
+}
+
+.hero-cta {
+  opacity: 0;
+  animation: ctaFadeIn 1s ease-out 1.5s forwards; /* Delayed entrance */
+  margin-top: 3rem; /* More space */
+  display: flex;
+  justify-content: center; /* Center the buttons */
+  gap: 1.5rem; /* Space between social links */
+}
+
+/* Add some interactive elements */
+.hero-title:hover {
+  filter: drop-shadow(0 0 20px rgba(24, 210, 110, 0.3));
+  transition: filter 0.3s ease;
+}
+
+/* Add subtle background animation */
+.hero-content::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150%; /* Reduced size for better performance */
+  height: 150%;
+  background: radial-gradient(circle, rgba(24, 210, 110, 0.02) 0%, transparent 60%);
+  z-index: -1;
+  animation: pulse 6s ease-in-out infinite; /* Slower animation */
+  border-radius: 50%;
+}
+
+@keyframes pulse {
+  0%, 100% { 
+    opacity: 0.3; 
+    transform: translate(-50%, -50%) scale(0.8); 
+  }
+  50% { 
+    opacity: 0.6; 
+    transform: translate(-50%, -50%) scale(1.2); 
+  }
+}
+
+/* Animations */
+@keyframes titleFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes subtitleFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes descriptionFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes lineFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes ctaFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-content {
+    max-width: 100%;
+    padding: 1.5rem 0.5rem; /* Reduced mobile padding */
+  }
+  
+  .about-author {
+    margin: 1.5rem 0 2.5rem;
+  }
+  
+  .about-line {
+    font-size: clamp(1rem, 2.5vw, 1.1rem); /* Better mobile sizing */
+    margin-bottom: 1.25rem;
+    line-height: 1.6;
+  }
+  
+  .hero-cta {
+    margin-top: 2.5rem;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content {
+    padding: 1rem 0.5rem; /* Even more compact on mobile */
+  }
+  
+  .hero-title {
+    margin-bottom: 1rem;
+  }
+  
+  .about-author {
+    margin: 1.5rem 0 2rem;
+  }
+  
+  .about-line {
+    font-size: clamp(0.95rem, 2.2vw, 1rem);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+  
+  .hero-cta {
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 2rem;
+  }
+  
+  .hero-cta button {
+    width: 100%;
+    max-width: 200px;
+  }
+}

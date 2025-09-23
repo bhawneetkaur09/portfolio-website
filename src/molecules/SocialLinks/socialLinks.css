@@ -1,0 +1,43 @@
+.social-icon{
+    background-color: #000;
+}
+.social{
+    display: flex;
+    gap: 8px; 
+    animation: socialFadeIn 0.8s ease-out 1.2s forwards;
+    opacity: 0;
+}
+
+@keyframes socialFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.social-icon-background{
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.social-icon-background:hover,
+.social-icon-background:focus {
+    background-color: #18d26e;
+    box-shadow: 0 0 20px rgba(24, 210, 110, 0.6);
+}
+
+.social-icon-background:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #fff, 0 0 0 4px #18d26e;
+}
