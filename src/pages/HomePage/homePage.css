@@ -12,8 +12,7 @@
 }
 
 .hero-content {
-  max-width: 900px; /* Slightly wider for better content display */
-  text-align: center; /* Back to center */
+  max-width: 900px;
   position: relative; /* Added for background animation positioning */
   padding: 2rem 1rem; /* Add proper padding */
 }
@@ -28,8 +27,7 @@
   -webkit-text-fill-color: transparent;
   animation: titleFadeIn 1s ease-out 0.2s forwards;
   opacity: 0;
-  letter-spacing: -0.02em; /* Tighter letter spacing for modern look */
-  text-align: center; /* Center the title */
+  letter-spacing: -0.02em;
 }
 
 .hero-subtitle {
@@ -39,8 +37,6 @@
   line-height: 1.4;
   animation: subtitleFadeIn 1s ease-out 0.4s forwards;
   opacity: 0;
-  text-align: center; /* Center the subtitle */
-  margin-bottom: 2rem; /* Added margin for spacing */
 }
 
 .hero-description {
@@ -52,7 +48,6 @@
 }
 
 .about-author {
-  text-align: center; /* Center align the content paragraphs */
   max-width: 750px; /* Constrain width for better readability */
   margin: 2rem auto; /* Increased top margin for better spacing */
 }
@@ -60,14 +55,11 @@
 .about-line {
   position: relative;
   color: rgba(255, 255, 255, 0.85);
-  font-size: clamp(1.05rem, 2vw, 1.15rem); /* Slightly smaller for better readability */
-  line-height: 1.7; /* Better line height for readability */
+  font-size: clamp(1.05rem, 2vw, 1.15rem); 
   opacity: 0;
   animation: lineFadeIn 0.8s ease-out forwards;
   transition: all 0.3s ease;
-  text-align: center; /* Fixed - consistent center alignment */
-  max-width: 100%; /* Ensure full width utilization */
-  margin-bottom: 1.5rem; /* Added consistent margin */
+  max-width: 100%;
 }
 
 .about-line:hover {
@@ -80,7 +72,6 @@
   animation: ctaFadeIn 1s ease-out 1.5s forwards; /* Delayed entrance */
   margin-top: 3rem; /* More space */
   display: flex;
-  justify-content: center; /* Center the buttons */
   gap: 1.5rem; /* Space between social links */
 }
 
