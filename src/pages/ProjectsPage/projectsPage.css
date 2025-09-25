@@ -7,7 +7,9 @@
 }
 
 .projects-section {
-  /* Removed custom padding - now using global section styling */
+  /* Override global section styles for proper centering */
+  height: auto; /* Override global height: 100% */
+  overflow: visible; /* Override global overflow-y: auto */
   position: relative;
   z-index: 1;
 }

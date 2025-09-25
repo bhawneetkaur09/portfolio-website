@@ -1,8 +1,18 @@
+/* Override global section styles for proper centering */
+.contact-section {
+  height: auto; /* Override global height: 100% */
+  overflow: visible; /* Override global overflow-y: auto */
+}
+
+/* Contact page specific title animation */
+.contact-page .section-title {
+  /* Gap handled by global container */
+}
+
 .contact-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 40px;
-  margin-top: 34px;
 }
 
 .contact-info h3 {

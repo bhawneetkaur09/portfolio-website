@@ -1,5 +1,16 @@
 /* Use global animations - removed page-specific ones */
 
+/* Override global section styles for proper centering */
+.about-section {
+  height: auto; /* Override global height: 100% */
+  overflow: visible; /* Override global overflow-y: auto */
+}
+
+/* About page specific title animation */
+.about-page .section-title {
+  /* Gap handled by global container */
+}
+
 .about-content {
   gap: 4rem;
   opacity: 0;
@@ -38,7 +49,7 @@
 
 
 .skills-section h3 {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem; /* Reduced margin to help with centering */
   color: #fff;
   font-size: 1.5rem;
   position: relative;
@@ -100,14 +111,14 @@
   gap: 1rem;
   width: 100%;
   padding: 4px;
-  max-height: 70vh; /* Limit to 70% of viewport height */
+  max-height: 60vh; /* Reduced height to help with centering */
   overflow: hidden; /* Prevent scrolling */
 }
 
 /* Skills Summary */
 .skills-summary {
-  margin-top: 2rem;
-  padding: 1.5rem;
+  margin-top: 1.5rem; /* Reduced margin to help with centering */
+  padding: 1.2rem; /* Reduced padding to save space */
   background: rgba(255, 255, 255, 0.03);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.1);
