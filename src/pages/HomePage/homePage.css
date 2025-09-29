@@ -6,9 +6,7 @@
 }
 
 .home-page .container {
-  display: flex;
-  align-items: center; /* Center vertically */
-  justify-content: center; /* Center horizontally */
+  align-items: center; 
 }
 
 .hero-content {

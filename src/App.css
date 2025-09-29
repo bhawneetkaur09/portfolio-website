@@ -12,125 +12,45 @@
   --color-shadow: rgba(24, 210, 110, 0.3);
 }
 
-#root {
-  height: 100vh;
-  overflow: hidden;
-}
-
-.App {
-  height: 100vh;
-  overflow: hidden;
-}
-
 * {
   box-sizing: border-box;
 }
 
-body, html {
+body,
+html {
   margin: 0;
   padding: 0;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: var(--color-background);
   color: var(--color-text);
   transition: all 0.3s ease;
-  overflow: hidden; /* Prevent body-level scrolling */
-  height: 100vh; /* Ensure full viewport height */
-}
-
-#root {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  background-color: var(--color-background);
-}
-
-.App {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  background-color: var(--color-background);
-  transition: background-color 0.3s ease;
+  overflow: hidden;
+  height: 100vh;
 }
 
 .App-main {
   display: flex;
   flex: 1;
-  padding-top: 80px; /* Account for fixed header */
+  padding-top: 80px;
   min-height: calc(100vh - 80px);
   position: relative;
   background-color: var(--color-background);
 }
 
-/* Page Transition Animations */
-.page-enter {
-  opacity: 0;
-  transform: translateX(100px);
-}
-
-.page-enter-active {
-  opacity: 1;
-  transform: translateX(0);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.page-exit {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.page-exit-active {
-  opacity: 0;
-  transform: translateX(-100px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-/* Smooth Scrolling */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Global Container */
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
-  height: calc(100vh - 80px); /* Fixed height instead of min-height */
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 3rem; /* Consistent gap between heading and content */
-  overflow: hidden; /* Prevent content overflow */
 }
 
-/* Global Page Wrapper */
-.home-page,
-.about-page,
-.projects-page,
-.contact-page {
-  background: linear-gradient(135deg, rgba(24, 210, 110, 0.05), rgba(0, 0, 0, 0.95));
-  height: 100vh; /* Fixed height instead of min-height */
-  width: 100%;
-  overflow: hidden; /* Prevent page-level scrolling */
-}
-
-/* Global Section Styling */
-.about-section,
-.projects-section,
-.contact-section {
-  padding: 1rem 0; /* Reduced padding to prevent overflow */
-  height: 100%;
-  overflow-y: auto; /* Allow internal scrolling if needed */
-}
-
-/* Global Section Title Styling */
 .section-title {
-  font-size: clamp(1.8rem, 4vw, 2.5rem); /* Reduced size to fit better */
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
   font-weight: 700;
-  margin-bottom: 2rem; /* Reduced margin */
+  margin-bottom: 2rem;
   text-align: center;
   background: linear-gradient(45deg, #fff, #18d26e);
   -webkit-background-clip: text;
@@ -141,18 +61,6 @@ html {
   animation: fadeInUp 0.8s ease-out forwards;
 }
 
-.section-title::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 3px;
-  background: #18d26e;
-}
-
-/* Global Animations - Consistent across all pages */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -206,7 +114,6 @@ html {
   }
 }
 
-/* Global content animation classes */
 .animate-content {
   opacity: 0;
   animation: fadeInUp 0.8s ease-out 0.3s forwards;
@@ -218,7 +125,7 @@ html {
 }
 
 .section-title::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -10px;
   left: 50%;
@@ -228,26 +135,19 @@ html {
   background: #18d26e;
 }
 
-/* Responsive Design */
 @media (max-width: 1024px) {
   .container {
     padding: 1.5rem;
-    height: calc(100vh - 70px); /* Adjust for smaller header */
+    height: calc(100vh - 70px);
   }
 }
 
 @media (max-width: 768px) {
   .container {
     padding: 1rem;
-    height: calc(100vh - 60px); /* Adjust for mobile header */
+    height: calc(100vh - 60px);
   }
-  
-  .about-section,
-  .projects-section,
-  .contact-section {
-    padding: 0.75rem 0; /* Reduced mobile padding */
-  }
-  
+
   .section-title {
     margin-bottom: 1.5rem; /* Reduced mobile margin */
     font-size: clamp(1.5rem, 4vw, 2rem);
@@ -257,22 +157,15 @@ html {
 @media (max-width: 480px) {
   .container {
     padding: 0.75rem;
-    height: calc(100vh - 50px); /* Minimal header height */
+    height: calc(100vh - 50px);
   }
-  
-  .about-section,
-  .projects-section,
-  .contact-section {
-    padding: 0.5rem 0; /* Minimal mobile padding */
-  }
-  
+
   .section-title {
     font-size: 1.5rem;
-    margin-bottom: 1rem; /* Minimal margin */
+    margin-bottom: 1rem;
   }
 }
 
-/* Global Button Styling */
 .btn-primary {
   background: var(--color-gradient);
   color: #fff;
@@ -314,7 +207,6 @@ html {
   box-shadow: 0 5px 20px var(--color-shadow);
 }
 
-/* Global Card Styling */
 .card {
   background: var(--color-surface);
   border-radius: 12px;
@@ -329,16 +221,15 @@ html {
   box-shadow: 0 8px 30px var(--color-shadow);
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .App-main {
     padding-top: 70px;
   }
-  
+
   .container {
     padding: 0 1rem;
   }
-  
+
   .section-title {
     font-size: clamp(1.5rem, 6vw, 2.5rem);
   }
@@ -348,7 +239,7 @@ html {
   .App-main {
     padding-top: 60px;
   }
-  
+
   .card {
     padding: 1.5rem;
   }
