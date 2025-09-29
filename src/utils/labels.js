@@ -7,6 +7,7 @@ export const ABOUT_AUTHOR = [
 export const AUTHOR_NAME = 'Bhawneet'
 export const AUTHOR_FULL_NAME = 'Bhawneet Kaur'
 export const AUTHOR_DESCRIPTION = 'I write code and chase clarity in systems and in life.'
+export const GREETING = 'Hi, I\'m'
 
 export const navItems = [
   { id: 'home', label: 'Home' },
