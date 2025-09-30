@@ -1,12 +1,13 @@
+import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Header } from './organisms/Header/Header';
 import AboutPage from './pages/AboutPage/AboutPage';
 import ContactPage from './pages/ContactPage/ContactPage';
-import HomePage from './pages/HomePage/HomePage.tsx';
+import HomePage from './pages/HomePage/HomePage';
 import ProjectsPage from './pages/ProjectsPage/ProjectsPage';
 
-function App() {
+const App: React.FC = () => {
   return (
       <Router>
         <div className="App">
@@ -22,6 +23,6 @@ function App() {
         </div>
       </Router>
   );
-}
+};
 
-export default App;
+export default App; 

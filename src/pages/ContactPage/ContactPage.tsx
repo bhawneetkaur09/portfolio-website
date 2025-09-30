@@ -1,20 +1,25 @@
-import { useState, useRef } from "react";
-// import emailjs from "@emailjs/browser";
+import React, { useState, useRef } from "react";
 import SocialLinks from "../../molecules/SocialLinks/SocialLinks";
 import SuccessModal from '../../molecules/SuccessModal/SuccessModal';
 import "./contactPage.css";
 
-const ContactPage = () => {
-  const form = useRef();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [status, setStatus] = useState("");
-  const [modalData, setModalData] = useState({
+interface ModalData {
+  isOpen: boolean;
+  name: string;
+  email: string;
+}
+
+const ContactPage: React.FC = () => {
+  const form = useRef<HTMLFormElement>(null);
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+  const [status, setStatus] = useState<any>("");
+  const [modalData, setModalData] = useState<ModalData>({
     isOpen: false,
     name: "",
     email: "",
   });
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
     setStatus({ type: "", message: "" });
@@ -26,18 +31,11 @@ const ContactPage = () => {
 
     try {
       const formData = {
-        user_name: form.current.user_name.value,
-        user_email: form.current.user_email.value,
-        subject: form.current.subject.value,
-        message: form.current.message.value,
+        user_name: (form.current.elements.namedItem('user_name') as HTMLInputElement).value,
+        user_email: (form.current.elements.namedItem('user_email') as HTMLInputElement).value,
+        subject: (form.current.elements.namedItem('subject') as HTMLInputElement).value,
+        message: (form.current.elements.namedItem('message') as HTMLTextAreaElement).value,
       };
-
-    // await emailjs.send(
-    //     "service_9mj2eyy",
-    //     "template_k25zk09",
-    //     formData,
-    //     "ZlK91KNLnvv4f4fnS"
-    //   );
 
       setModalData({
         isOpen: true,
@@ -133,4 +131,4 @@ const ContactPage = () => {
   );
 };
 
-export default ContactPage;
+export default ContactPage; 

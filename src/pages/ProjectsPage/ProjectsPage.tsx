@@ -1,18 +1,16 @@
-// filepath: /Users/bhawneetkaur/Desktop/bhawneet-portfolio/portfolio/src/pages/ProjectsPage/ProjectsPage.jsx
-import { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { projects } from '../../utils/projects';
 import './projectsPage.css';
 import GreaterThanIcon from '../../assets/GreaterThanIcon';
 import LessThanIcon from '../../assets/LessThanIcon';
 
-const ProjectsPage = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [touchStart, setTouchStart] = useState(0);
-  const [touchEnd, setTouchEnd] = useState(0);
-  const sliderRef = useRef(null);
-  const autoPlayRef = useRef(null);
+const ProjectsPage: React.FC = () => {
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
+  const [touchStart, setTouchStart] = useState<number>(0);
+  const [touchEnd, setTouchEnd] = useState<number>(0);
+  const sliderRef = useRef<HTMLDivElement | null>(null);
+  const autoPlayRef = useRef<(() => void) | null>(null);
 
-//   // Auto sliding functionality
   useEffect(() => {
     const autoPlay = () => {
       if (sliderRef.current) {
@@ -23,13 +21,12 @@ const ProjectsPage = () => {
     autoPlayRef.current = autoPlay;
   }, []);
 
-  // Set up auto play interval
   useEffect(() => {
     const interval = setInterval(() => {
       if (autoPlayRef.current) {
         autoPlayRef.current();
       }
-    }, 5000); // Change slide every 5 seconds
+    }, 5000);
 
     return () => clearInterval(interval);
   }, []);
@@ -46,27 +43,24 @@ const ProjectsPage = () => {
     );
   };
 
-  const handleDotClick = (index) => {
+  const handleDotClick = (index: number) => {
     setCurrentIndex(index);
   };
 
-  // Touch handlers for mobile swipe
-  const handleTouchStart = (e) => {
+  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
     setTouchStart(e.targetTouches[0].clientX);
   };
 
-  const handleTouchMove = (e) => {
+  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
     setTouchEnd(e.targetTouches[0].clientX);
   };
 
   const handleTouchEnd = () => {
     if (touchStart - touchEnd > 150) {
-      // Swipe left
       handleNextSlide();
     }
 
     if (touchStart - touchEnd < -150) {
-      // Swipe right
       handlePrevSlide();
     }
   };
@@ -140,4 +134,4 @@ const ProjectsPage = () => {
   );
 };
 
-export default ProjectsPage;
+export default ProjectsPage; 

@@ -1,11 +1,13 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { skillCategories } from '../../utils/skills';
 import './aboutPage.css';
 
-const AboutPage = () => {
-  const [activeCategory, setActiveCategory] = useState('languages');
+type CategoryKey = 'languages' | 'frontend' | 'backend' | 'testing' | 'debugging' | 'tools';
 
-  const categoryLabels = {
+const AboutPage: React.FC = () => {
+  const [activeCategory, setActiveCategory] = useState<CategoryKey>('languages');
+
+  const categoryLabels: Record<CategoryKey, string> = {
     languages: 'Languages',
     frontend: 'Frontend',
     backend: 'Backend Exposure',
@@ -23,9 +25,8 @@ const AboutPage = () => {
             <div className="skills-section">
               <h3>Skills & Technologies</h3>
               
-              {/* Category Tabs */}
               <div className="skill-tabs">
-                {Object.keys(skillCategories).map((category) => (
+                {(Object.keys(skillCategories) as CategoryKey[]).map((category) => (
                   <button
                     key={category}
                     className={`skill-tab ${activeCategory === category ? 'active' : ''}`}
@@ -36,7 +37,6 @@ const AboutPage = () => {
                 ))}
               </div>
 
-              {/* Skills Grid */}
               <div className="skills-grid">
                 {skillCategories[activeCategory]?.map((skill, index) => (
                   <div
@@ -59,7 +59,6 @@ const AboutPage = () => {
                 ))}
               </div>
 
-              {/* Skills Summary */}
               <div className="skills-summary">
                 <p>
                   <strong>Languages:</strong> JavaScript, TypeScript, HTML5, CSS3/Sass, SQL basics
@@ -83,4 +82,4 @@ const AboutPage = () => {
   );
 };
 
-export default AboutPage;
+export default AboutPage; 
