@@ -54,80 +54,74 @@ const ContactPage: React.FC = () => {
   };
 
   return (
-    <div className="contact-page">
-      <div className="container">
+    <main className="contact-page">
+      <section className="contact-section">
         <h2 className="section-title">Get In Touch</h2>
-        <section className="contact-section">
-          <div className="contact-content">
-        <div className="contact-info">
-          <h3>Let's Talk</h3>
-          <p>
-            I'm always open to discussing new projects, creative ideas, or
-            opportunities to be part of your visions.
-          </p>
-          <div className="contact-details">
-            <div className="contact-item">
-              <strong>Email:</strong>
-              <a href="mailto:bhawneetkaur09@gmail.com">
-                bhawneetkaur09@gmail.com
-              </a>
-            </div>
-            <div className="contact-item">
-              <strong>Location:</strong>
-              <span>Ludhiana</span>
-            </div>
-            <div className="contact-item flex">
-              <strong>Feel free to ping me on social media</strong>
-              <SocialLinks />
-            </div>
-          </div>
-        </div>
-        <form ref={form} className="contact-form" onSubmit={handleSubmit}>
-          <div className="form-group">
+        <div className="contact-content">
+          <aside className="contact-info">
+            <h3>Let's Talk</h3>
+            <p>
+              I'm always open to discussing new projects, creative ideas, or
+              opportunities to be part of your visions.
+            </p>
+            <address className="contact-details">
+              <dl className="contact-item">
+                <dt>Email:</dt>
+                <dd>
+                  <a href="mailto:bhawneetkaur09@gmail.com">
+                    bhawneetkaur09@gmail.com
+                  </a>
+                </dd>
+              </dl>
+              <dl className="contact-item">
+                <dt>Location:</dt>
+                <dd>Ludhiana</dd>
+              </dl>
+              <dl className="contact-item flex">
+                <dt>Feel free to ping me on social media</dt>
+                <dd>
+                  <SocialLinks />
+                </dd>
+              </dl>
+            </address>
+          </aside>
+          <form ref={form} className="contact-form" onSubmit={handleSubmit}>
             <input
               type="text"
               name="user_name"
               placeholder="Your Name"
               required
             />
-          </div>
-          <div className="form-group">
             <input
               type="email"
               name="user_email"
               placeholder="Your Email"
               required
             />
-          </div>
-          <div className="form-group">
             <input type="text" name="subject" placeholder="Subject" required />
-          </div>
-          <div className="form-group">
             <textarea
               name="message"
               placeholder="Your Message"
               rows={6}
               required
             ></textarea>
-          </div>
-          <button
-            type="submit"
-            className={`submit-button ${isSubmitting ? "submitting" : ""}`}
-            disabled={isSubmitting}
-          >
-            {isSubmitting ? "Sending..." : "Send Message"}
-          </button>
-        </form>
-      </div>
-        </section>
-        <SuccessModal 
-          isOpen={modalData.isOpen}
-          onClose={() => setModalData({ ...modalData, isOpen: false })}
-          name={modalData.name}
-          email={modalData.email}
-        />
-      </div>
-    </div>
+            <button
+              type="submit"
+              className={`submit-button ${isSubmitting ? "submitting" : ""}`}
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? "Sending..." : "Send Message"}
+            </button>
+          </form>
+        </div>
+      </section>
+      <SuccessModal 
+        isOpen={modalData.isOpen}
+        onClose={() => setModalData({ ...modalData, isOpen: false })}
+        name={modalData.name}
+        email={modalData.email}
+      />
+    </main>
   );
 };
 

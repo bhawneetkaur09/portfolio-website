@@ -1,5 +1,6 @@
-import * as React from "react"
-const LessThanIcon = (props) => (
+import React from 'react';
+
+const LessThanIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={24}
@@ -15,5 +16,6 @@ const LessThanIcon = (props) => (
       d="m15 6-6 6 6 6"
     />
   </svg>
-)
-export default LessThanIcon
+);
+
+export default LessThanIcon; 

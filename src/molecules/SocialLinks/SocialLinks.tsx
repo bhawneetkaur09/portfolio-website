@@ -1,11 +1,18 @@
+import React from 'react';
 import FacebookIcon from '../../assets/FacebookIcon';
 import InstagramIcon from '../../assets/InstagramIcon';
 import LinkedinIcon from '../../assets/LinkedinIcon';
-import MediumIcon from '../../assets/Mediumicon';
+import MediumIcon from '../../assets/MediumIcon';
 import './socialLinks.css';
 
-const SocialLinks = () => {
-  const socialLinks = [
+interface SocialLink {
+  icon: React.FC<React.SVGProps<SVGSVGElement>>;
+  url: string;
+  label: string;
+}
+
+const SocialLinks: React.FC = () => {
+  const socialLinks: SocialLink[] = [
     {
       icon: LinkedinIcon,
       url: 'https://www.linkedin.com/in/bhawneetkaur1309/',
@@ -36,6 +43,7 @@ const SocialLinks = () => {
           className='social-icon-background'
           href={url}
           target="_blank"
+          rel="noopener noreferrer"
           aria-label={label}
         >
           <Icon />
@@ -45,4 +53,4 @@ const SocialLinks = () => {
   );
 };
 
-export default SocialLinks;
+export default SocialLinks; 

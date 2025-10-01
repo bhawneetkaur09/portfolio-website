@@ -1,4 +1,14 @@
-export const projects = [
+export interface Project {
+  id: number;
+  title: string;
+  description: string;
+  imageUrl: string;
+  technologies: string[];
+  githubUrl: string;
+  liveUrl: string;
+}
+
+export const projects: Project[] = [
   {
     id: 1,
     title: "StackDecision",
@@ -26,4 +36,4 @@ export const projects = [
     githubUrl: "https://github.com/bhawneetkaur/tabbuddy",
     liveUrl: "https://chrome.google.com/webstore/detail/tabbuddy"
   }
-];
+]; 

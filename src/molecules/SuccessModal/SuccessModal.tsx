@@ -2,7 +2,14 @@ import React from 'react';
 import SocialLinks from '../SocialLinks/SocialLinks';
 import './successModal.css';
 
-const SuccessModal = ({ isOpen, onClose, name, email }) => {
+interface SuccessModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  name: string;
+  email: string;
+}
+
+const SuccessModal: React.FC<SuccessModalProps> = ({ isOpen, onClose, name, email }) => {
   if (!isOpen) return null;
 
   return (
@@ -32,4 +39,4 @@ const SuccessModal = ({ isOpen, onClose, name, email }) => {
   );
 };
 
-export default SuccessModal;
+export default SuccessModal; 

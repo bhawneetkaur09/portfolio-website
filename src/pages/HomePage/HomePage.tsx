@@ -1,3 +1,4 @@
+import React from 'react';
 import SocialLinks from "../../molecules/SocialLinks/SocialLinks";
 import {
   AUTHOR_NAME,
@@ -7,7 +8,7 @@ import {
 } from "../../utils/labels";
 import "./homePage.css";
 
-const HomePage = () => {
+const HomePage: React.FC = () => {
   return (
     <main className="home-page">
       <section className="hero-content">

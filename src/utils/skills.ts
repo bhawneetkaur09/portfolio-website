@@ -1,5 +1,19 @@
-// Core skills organized by category for better display
-export const skillCategories = {
+export interface Skill {
+  name: string;
+  description: string;
+  experience: string;
+}
+
+export interface SkillCategories {
+  languages: Skill[];
+  frontend: Skill[];
+  backend: Skill[];
+  testing: Skill[];
+  debugging: Skill[];
+  tools: Skill[];
+}
+
+export const skillCategories: SkillCategories = {
   languages: [
     {
       name: 'JavaScript',
@@ -214,6 +228,4 @@ export const skillCategories = {
   ]
 };
 
-// Flattened skills array for backward compatibility
-export const skills = Object.values(skillCategories).flat();
-
+export const skills: Skill[] = Object.values(skillCategories).flat(); 

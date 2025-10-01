@@ -1,29 +1,29 @@
-import { AUTHOR_NAME, navItems } from "../../utils/labels"
-import { useState, useEffect } from 'react'
-import { Link, useLocation } from 'react-router-dom'
-import './header.css'
-import CrossIcon from "../../assets/CrossIcon";
-import HamburgerIcon from "../../assets/HamburgerIcon";
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { AUTHOR_NAME, navItems } from '../../utils/labels';
+import CrossIcon from '../../assets/CrossIcon';
+import HamburgerIcon from '../../assets/HamburgerIcon';
+import './header.css';
 
-export const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [scrollProgress, setScrollProgress] = useState(0);
-  const [isScrolled, setIsScrolled] = useState(false);
+export const Header: React.FC = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+  const [scrollProgress, setScrollProgress] = useState<number>(0);
+  const [isScrolled, setIsScrolled] = useState<boolean>(false);
   const location = useLocation();
 
-  const toggleMenu = () => {
+  const toggleMenu = (): void => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const closeMenu = () => {
+  const closeMenu = (): void => {
     setIsMenuOpen(false);
   };
 
-  const getRoutePath = (id) => {
+  const getRoutePath = (id: string): string => {
     return id === 'home' ? '/' : `/${id}`;
   };
 
-  const isActiveRoute = (id) => {
+  const isActiveRoute = (id: string): boolean => {
     const routePath = getRoutePath(id);
     return location.pathname === routePath;
   };
@@ -60,5 +60,5 @@ export const Header = () => {
         </div>
       </div>
     </header>
-  )
-}
+  );
+}; 

@@ -1,17 +1,14 @@
-/* Use global animations - removed page-specific ones */
-
-/* Override global section styles for proper centering */
 .about-section {
-  height: auto; /* Override global height: 100% */
-  overflow: visible; /* Override global overflow-y: auto */
+  height: auto;
+  overflow: visible;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
-/* About page specific title animation */
-.about-page .section-title {
-  /* Gap handled by global container */
-}
-
-.about-content {
+.skills-section {
   gap: 4rem;
   opacity: 0;
   animation: contentFadeIn 0.8s ease-out 0.3s forwards;
@@ -49,7 +46,7 @@
 
 
 .skills-section h3 {
-  margin-bottom: 1.5rem; /* Reduced margin to help with centering */
+  margin-bottom: 1.5rem;
   color: #fff;
   font-size: 1.5rem;
   position: relative;
@@ -68,7 +65,6 @@
   background: #18d26e;
 }
 
-/* Skill Tabs */
 .skill-tabs {
   display: flex;
   justify-content: center;
@@ -111,14 +107,15 @@
   gap: 1rem;
   width: 100%;
   padding: 4px;
-  max-height: 60vh; /* Reduced height to help with centering */
-  overflow: hidden; /* Prevent scrolling */
+  max-height: 60vh;
+  overflow: hidden;
+  list-style: none;
+  margin: 0;
 }
 
-/* Skills Summary */
 .skills-summary {
-  margin-top: 1.5rem; /* Reduced margin to help with centering */
-  padding: 1.2rem; /* Reduced padding to save space */
+  margin-top: 1.5rem;
+  padding: 1.2rem;
   background: rgba(255, 255, 255, 0.03);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -137,7 +134,6 @@
   font-weight: 600;
 }
 
-/* Mobile-specific animations */
 @media (max-width: 768px) {
   .skill-item {
     opacity: 0;
@@ -166,10 +162,11 @@
 }
 
 .skill-item {
-  height: clamp(120px, 12vh, 160px); /* Responsive height: min 120px, max 160px, or 12% of viewport height */
+  height: clamp(120px, 12vh, 160px);
   perspective: 1000px;
   cursor: pointer;
   width: 100%;
+  list-style: none;
 }
 
 .skill-content {
