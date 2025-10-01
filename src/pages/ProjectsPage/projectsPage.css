@@ -7,11 +7,15 @@
 }
 
 .projects-section {
-  /* Override global section styles for proper centering */
-  height: auto; /* Override global height: 100% */
-  overflow: visible; /* Override global overflow-y: auto */
+  height: auto;
+  overflow: visible;
   position: relative;
   z-index: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
 /* Project-specific title animation */
@@ -50,6 +54,16 @@
   perspective: 1000px;
   opacity: 0;
   animation: containerFadeIn 1.2s ease-out 0.5s forwards;
+  border-radius: 24px;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 25px 50px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @keyframes containerFadeIn {
@@ -63,22 +77,7 @@
   }
 }
 
-/* Modern project slider with glass effect */
-.project-slider {
-  width: 100%;
-  border-radius: 24px;
-  overflow: hidden;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 
-    0 25px 50px rgba(0, 0, 0, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.project-slider:hover {
+.slider-container:hover {
   transform: translateY(-8px);
   box-shadow: 
     0 35px 60px rgba(0, 0, 0, 0.4),
@@ -100,6 +99,7 @@
   height: 350px;
   position: relative;
   overflow: hidden;
+  margin: 0;
 }
 
 .project-image::before {
@@ -203,6 +203,9 @@
   flex-wrap: wrap;
   gap: 0.8rem;
   margin-bottom: 2rem;
+  list-style: none;
+  padding: 0;
+  margin-left: 0;
 }
 
 .technology-tag {
@@ -221,6 +224,7 @@
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
+  list-style: none;
 }
 
 .technology-tag::before {
@@ -404,16 +408,6 @@
   text-shadow: 0 0 10px rgba(24, 210, 110, 0.5);
 }
 
-/* Container styles */
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  box-sizing: border-box;
-}
-
-/* Enhanced responsive design */
 @media (min-width: 768px) {
   .project-slide {
     flex-direction: row;

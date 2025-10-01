@@ -68,69 +68,68 @@ const ProjectsPage: React.FC = () => {
   const currentProject = projects[currentIndex];
 
   return (
-    <div className="projects-page">
-      <div className="container">
-        <section className="projects-section">
-          <h2 className="section-title">My Projects</h2>
-          
-          <div 
-            className="slider-container"
-            ref={sliderRef}
-            onTouchStart={handleTouchStart}
-            onTouchMove={handleTouchMove}
-            onTouchEnd={handleTouchEnd}
-          >
-            <div className="project-slider">
-              <div className="project-slide">
-                <div className="project-image">
-                  <img src={currentProject.imageUrl} alt={currentProject.title} />
-                </div>
-                <div className="project-content">
-                  <h3 className="project-title">{currentProject.title}</h3>
-                  <p className="project-description">{currentProject.description}</p>
-                  <div className="project-technologies">
-                    {currentProject.technologies.map((tech, index) => (
-                      <span key={index} className="technology-tag">{tech}</span>
-                    ))}
-                  </div>
-                  <div className="project-links">
-                    <a href={currentProject.githubUrl} target="_blank" rel="noopener noreferrer" className="project-link">
-                      Github
-                    </a>
-                    <a href={currentProject.liveUrl} target="_blank" rel="noopener noreferrer" className="project-link">
-                      Live Demo
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
+    <main className="projects-page">
+      <section className="projects-section">
+        <h2 className="section-title">My Projects</h2>
+        
+        <div 
+          className="slider-container"
+          ref={sliderRef}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+        >
+          <article className="project-slide">
+            <figure className="project-image">
+              <img src={currentProject.imageUrl} alt={currentProject.title} />
+            </figure>
             
-            <button className="slider-control prev" onClick={handlePrevSlide} aria-label="Previous project">
-              <LessThanIcon/>
-            </button>
-            <button className="slider-control next" onClick={handleNextSlide} aria-label="Next project">
-              <GreaterThanIcon/>
-            </button>
-            
-            <div className="slider-dots">
-              {projects.map((_, index) => (
-                <button
-                  key={index}
-                  className={`slider-dot ${index === currentIndex ? 'active' : ''}`}
-                  onClick={() => handleDotClick(index)}
-                  aria-label={`Go to project ${index + 1}`}
-                />
-              ))}
-            </div>
-          </div>
+            <header className="project-content">
+              <h3 className="project-title">{currentProject.title}</h3>
+              <p className="project-description">{currentProject.description}</p>
+              
+              <ul className="project-technologies">
+                {currentProject.technologies.map((tech, index) => (
+                  <li key={index} className="technology-tag">{tech}</li>
+                ))}
+              </ul>
+              
+              <nav className="project-links">
+                <a href={currentProject.githubUrl} target="_blank" rel="noopener noreferrer" className="project-link">
+                  Github
+                </a>
+                <a href={currentProject.liveUrl} target="_blank" rel="noopener noreferrer" className="project-link">
+                  Live Demo
+                </a>
+              </nav>
+            </header>
+          </article>
           
-          <div className="project-counter">
-            <span className="current-project">{currentIndex + 1}</span>
-            <span className="total-projects">/ {projects.length}</span>
-          </div>
-        </section>
-      </div>
-    </div>
+          <button className="slider-control prev" onClick={handlePrevSlide} aria-label="Previous project">
+            <LessThanIcon/>
+          </button>
+          <button className="slider-control next" onClick={handleNextSlide} aria-label="Next project">
+            <GreaterThanIcon/>
+          </button>
+          
+          <nav className="slider-dots" aria-label="Project navigation">
+            {projects.map((_, index) => (
+              <button
+                key={index}
+                className={`slider-dot ${index === currentIndex ? 'active' : ''}`}
+                onClick={() => handleDotClick(index)}
+                aria-label={`Go to project ${index + 1}`}
+              />
+            ))}
+          </nav>
+        </div>
+        
+        <output className="project-counter">
+          <span className="current-project">{currentIndex + 1}</span>
+          <span className="total-projects">/ {projects.length}</span>
+        </output>
+      </section>
+    </main>
   );
 };
 
