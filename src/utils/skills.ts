@@ -1,3 +1,14 @@
+export type CategoryKey = 'languages' | 'frontend' | 'backend' | 'testing' | 'debugging' | 'tools';
+
+export const categoryLabels: Record<CategoryKey, string> = {
+  languages: 'Languages',
+  frontend: 'Frontend',
+  backend: 'Backend Exposure',
+  testing: 'Testing',
+  debugging: 'Debugging',
+  tools: 'Tools/Infra'
+};
+
 export interface Skill {
   name: string;
   description: string;

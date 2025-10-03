@@ -1,20 +1,9 @@
 import React, { useState } from 'react';
-import { skillCategories } from '../../utils/skills';
+import { skillCategories, CategoryKey, categoryLabels } from '../../utils/skills';
 import './aboutPage.css';
-
-type CategoryKey = 'languages' | 'frontend' | 'backend' | 'testing' | 'debugging' | 'tools';
 
 const AboutPage: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<CategoryKey>('languages');
-
-  const categoryLabels: Record<CategoryKey, string> = {
-    languages: 'Languages',
-    frontend: 'Frontend',
-    backend: 'Backend Exposure',
-    testing: 'Testing',
-    debugging: 'Debugging',
-    tools: 'Tools/Infra'
-  };
 
   return (
     <main className="about-page">

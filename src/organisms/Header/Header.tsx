@@ -1,15 +1,21 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { AUTHOR_NAME, navItems } from '../../utils/labels';
+import { Navigation } from '../../molecules/Navigation/Navigation';
+import { useScrollProgress } from '../../hooks/useScrollProgress';
 import CrossIcon from '../../assets/CrossIcon';
 import HamburgerIcon from '../../assets/HamburgerIcon';
 import './header.css';
 
+const navigationItems = navItems.map(({ id, label }) => ({
+  id,
+  label,
+  path: id === 'home' ? '/' : `/${id}`
+}));
+
 export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-  const [scrollProgress, setScrollProgress] = useState<number>(0);
-  const [isScrolled, setIsScrolled] = useState<boolean>(false);
-  const location = useLocation();
+  const { scrollProgress, isScrolled } = useScrollProgress();
 
   const toggleMenu = (): void => {
     setIsMenuOpen(!isMenuOpen);
@@ -17,15 +23,6 @@ export const Header: React.FC = () => {
 
   const closeMenu = (): void => {
     setIsMenuOpen(false);
-  };
-
-  const getRoutePath = (id: string): string => {
-    return id === 'home' ? '/' : `/${id}`;
-  };
-
-  const isActiveRoute = (id: string): boolean => {
-    const routePath = getRoutePath(id);
-    return location.pathname === routePath;
   };
 
   return (
@@ -36,18 +33,11 @@ export const Header: React.FC = () => {
           {AUTHOR_NAME}
         </Link>
         
-        <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
-          {navItems.map(({ id, label }) => (
-            <Link
-              key={id}
-              to={getRoutePath(id)}
-              className={`nav-link ${isActiveRoute(id) ? 'active' : ''}`}
-              onClick={closeMenu}
-            >
-              {label}
-            </Link>
-          ))}
-        </nav>
+        <Navigation 
+          items={navigationItems}
+          onItemClick={closeMenu}
+          className={isMenuOpen ? 'nav-open' : ''}
+        />
 
         <div className="header-actions">
           <button 
@@ -61,4 +51,4 @@ export const Header: React.FC = () => {
       </div>
     </header>
   );
-}; 
+};

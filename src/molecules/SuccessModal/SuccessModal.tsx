@@ -1,5 +1,6 @@
 import React from 'react';
 import SocialLinks from '../SocialLinks/SocialLinks';
+import { successModalLabels } from '../../utils/modalLabels';
 import './successModal.css';
 
 interface SuccessModalProps {
@@ -12,26 +13,34 @@ interface SuccessModalProps {
 const SuccessModal: React.FC<SuccessModalProps> = ({ isOpen, onClose, name, email }) => {
   if (!isOpen) return null;
 
+  const firstName = name ? name.split(' ')[0] : successModalLabels.thankYouDefault;
+
   return (
     <div className="modal-overlay">
       <div className="modal-content">
         <div className="modal-header">
-          <div className="success-icon">✨</div>
-          <h2>Message Sent Successfully!</h2>
-          <button className="close-button" onClick={onClose}>×</button>
+          <div className="success-icon">{successModalLabels.successIcon}</div>
+          <h2>{successModalLabels.title}</h2>
+          <button className="close-button" onClick={onClose}>
+            {successModalLabels.closeButton}
+          </button>
         </div>
         <div className="modal-body">
-          <p>Thank you {name ? name.split(' ')[0] : 'there'}! 🎉</p>
-          <p>I'll get back to you shortly at {email}.</p>
+          <p>
+            {successModalLabels.thankYouPrefix} {firstName}{successModalLabels.thankYouSuffix}
+          </p>
+          <p>
+            {successModalLabels.responseMessage} {email}.
+          </p>
           <div className="divider"></div>
-          <p className="connect-text">Meanwhile, let's connect!</p>
+          <p className="connect-text">{successModalLabels.connectMessage}</p>
           <div className="social-wrapper">
             <SocialLinks />
           </div>
         </div>
         <div className="modal-footer">
           <button className="modal-button" onClick={onClose}>
-            Got it!
+            {successModalLabels.confirmButton}
           </button>
         </div>
       </div>
@@ -39,4 +48,4 @@ const SuccessModal: React.FC<SuccessModalProps> = ({ isOpen, onClose, name, emai
   );
 };
 
-export default SuccessModal; 
+export default SuccessModal;

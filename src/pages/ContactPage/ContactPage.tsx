@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import SocialLinks from "../../molecules/SocialLinks/SocialLinks";
 import SuccessModal from '../../molecules/SuccessModal/SuccessModal';
+import { contactInfo } from '../../utils/contact';
 import "./contactPage.css";
 
 interface ModalData {
@@ -60,22 +61,19 @@ const ContactPage: React.FC = () => {
         <div className="contact-content">
           <aside className="contact-info">
             <h3>Let's Talk</h3>
-            <p>
-              I'm always open to discussing new projects, creative ideas, or
-              opportunities to be part of your visions.
-            </p>
+            <p>{contactInfo.description}</p>
             <address className="contact-details">
               <dl className="contact-item">
                 <dt>Email:</dt>
                 <dd>
-                  <a href="mailto:bhawneetkaur09@gmail.com">
-                    bhawneetkaur09@gmail.com
+                  <a href={contactInfo.email.href}>
+                    {contactInfo.email.address}
                   </a>
                 </dd>
               </dl>
               <dl className="contact-item">
                 <dt>Location:</dt>
-                <dd>Ludhiana</dd>
+                <dd>{contactInfo.location}</dd>
               </dl>
               <dl className="contact-item flex">
                 <dt>Feel free to ping me on social media</dt>
