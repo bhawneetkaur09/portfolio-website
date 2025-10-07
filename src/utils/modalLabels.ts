@@ -10,3 +10,4 @@ export const successModalLabels = {
   successIcon: '✨'
 } as const;
 
+

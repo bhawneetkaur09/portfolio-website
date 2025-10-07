@@ -53,3 +53,4 @@ export const useScrollAnimation = ({
   return { elementRef, hasAnimated };
 };
 
+

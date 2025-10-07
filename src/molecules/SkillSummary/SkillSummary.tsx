@@ -19,3 +19,4 @@ export const SkillSummary: React.FC = () => (
   </aside>
 );
 
+
