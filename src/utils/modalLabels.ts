@@ -9,3 +9,4 @@ export const successModalLabels = {
   confirmButton: 'Got it!',
   successIcon: '✨'
 } as const;
+

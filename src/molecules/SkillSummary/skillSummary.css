@@ -1,0 +1,18 @@
+.skills-summary {
+  margin-top: 3rem;
+  padding: 2rem;
+  background: var(--card-bg);
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.skills-summary p {
+  margin: 0;
+  line-height: 2;
+  color: var(--text-secondary);
+}
+
+.skills-summary strong {
+  color: var(--text-primary);
+  margin-right: 0.5rem;
+}

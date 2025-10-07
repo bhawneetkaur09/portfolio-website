@@ -18,3 +18,4 @@ export const useScrollProgress = () => {
 
   return { scrollProgress, isScrolled };
 };
+

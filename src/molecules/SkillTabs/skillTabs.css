@@ -1,0 +1,42 @@
+.skill-tabs {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+.skill-tab {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  background: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.skill-tab::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--primary-color);
+  transition: all 0.3s;
+  transform: translateX(-50%);
+}
+
+.skill-tab:hover {
+  color: var(--text-primary);
+}
+
+.skill-tab.active {
+  color: var(--primary-color);
+}
+
+.skill-tab.active::after {
+  width: 80%;
+}

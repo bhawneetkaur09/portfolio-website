@@ -1,7 +1,7 @@
-import { ReactComponent as FacebookIcon } from '../assets/FacebookIcon';
-import { ReactComponent as InstagramIcon } from '../assets/InstagramIcon';
-import { ReactComponent as LinkedinIcon } from '../assets/LinkedinIcon';
-import { ReactComponent as MediumIcon } from '../assets/MediumIcon';
+import FacebookIcon from '../assets/FacebookIcon';
+import InstagramIcon from '../assets/InstagramIcon';
+import LinkedinIcon from '../assets/LinkedinIcon';
+import MediumIcon from '../assets/MediumIcon';
 import { FC, SVGProps } from 'react';
 
 export interface SocialLink {
