@@ -1,5 +1,7 @@
 import React from 'react';
 import { projects } from '../../utils/projects';
+import { useDocumentTitle } from '../../hooks/useDocumentTitle';
+import { PAGE_TITLES } from '../../utils/pageTitles';
 import { Slider } from '../../molecules/Slider/Slider';
 import './projectsPage.css';
 
@@ -32,6 +34,8 @@ const ProjectCard: React.FC<{ project: typeof projects[0] }> = ({ project }) => 
 );
 
 const ProjectsPage: React.FC = () => {
+  useDocumentTitle(PAGE_TITLES.projects);
+
   return (
     <main className="projects-page">
       <section className="projects-section">

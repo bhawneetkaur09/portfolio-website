@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { ContactForm } from "../../molecules/ContactForm/ContactForm";
 import { ContactInfo } from "../../molecules/ContactInfo/ContactInfo";
+import { useDocumentTitle } from '../../hooks/useDocumentTitle';
+import { PAGE_TITLES } from '../../utils/pageTitles';
 import SuccessModal from '../../molecules/SuccessModal/SuccessModal';
 import "./contactPage.css";
 
@@ -11,6 +13,7 @@ interface ModalData {
 }
 
 const ContactPage: React.FC = () => {
+  useDocumentTitle(PAGE_TITLES.contact);
   const [modalData, setModalData] = useState<ModalData>({
     isOpen: false,
     name: "",

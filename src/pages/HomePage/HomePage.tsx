@@ -1,5 +1,7 @@
 import React from 'react';
 import SocialLinks from "../../molecules/SocialLinks/SocialLinks";
+import { useDocumentTitle } from '../../hooks/useDocumentTitle';
+import { PAGE_TITLES } from '../../utils/pageTitles';
 import {
   AUTHOR_NAME,
   AUTHOR_DESCRIPTION,
@@ -9,6 +11,8 @@ import {
 import "./homePage.css";
 
 const HomePage: React.FC = () => {
+  useDocumentTitle(PAGE_TITLES.home);
+
   return (
     <main className="home-page">
       <section className="hero-content">
