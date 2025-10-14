@@ -32,3 +32,4 @@ export const SkillGrid: React.FC<SkillGridProps> = ({ skills, categoryId }) => (
 );
 
 
+
