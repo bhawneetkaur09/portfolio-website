@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
-import { ThemeProvider } from './context/ThemeContext';
-import { ThemeToggle } from './molecules/ThemeToggle/ThemeToggle';
+// ThemeProvider removed per request; app uses default styles only
 import DockNav from './molecules/DockNav/DockNav';
 import HomePage from './pages/HomePage/HomePage';
 import AboutPage from './pages/AboutPage/AboutPage';
@@ -10,9 +9,7 @@ import ContactPage from './pages/ContactPage/ContactPage';
 
 const App: React.FC = () => {
   return (
-    <ThemeProvider>
-      <div className="App">
-        <ThemeToggle />
+    <div className="App">
         <main className="App-main">
           <section id="home">
             <HomePage />
@@ -29,7 +26,6 @@ const App: React.FC = () => {
         </main>
         <DockNav />
       </div>
-    </ThemeProvider>
   );
 };
 
