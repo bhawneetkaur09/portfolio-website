@@ -28,18 +28,22 @@ html {
   background: var(--color-background);
   color: var(--color-text);
   transition: all 0.3s ease;
-  overflow: hidden;
-  height: 100vh;
+  overflow-y: auto;
+  height: auto;
 }
 
 .App-main {
   display: flex;
-  flex: 1;
-  padding-top: 80px;
-  min-height: calc(100vh - 80px);
+  flex-direction: column;
+  gap: 48px;
+  padding-top: 24px;
+  padding-bottom: 120px; /* space for bottom dock */
   position: relative;
   background-color: var(--color-background);
+  scroll-behavior: smooth;
 }
+
+.App-main > section { padding: 48px 0; }
 
 .container {
   display: flex;

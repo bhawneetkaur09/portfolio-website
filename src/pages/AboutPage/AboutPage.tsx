@@ -1,14 +1,11 @@
 import React, { useState } from 'react';
 import { skillCategories, CategoryKey } from '../../utils/skills';
-import { useDocumentTitle } from '../../hooks/useDocumentTitle';
-import { PAGE_TITLES } from '../../utils/pageTitles';
 import { SkillTabs } from '../../molecules/SkillTabs/SkillTabs';
 import { SkillGrid } from '../../molecules/SkillGrid/SkillGrid';
 import { SkillSummary } from '../../molecules/SkillSummary/SkillSummary';
 import './aboutPage.css';
 
 const AboutPage: React.FC = () => {
-  useDocumentTitle(PAGE_TITLES.about);
   const [activeCategory, setActiveCategory] = useState<CategoryKey>('languages');
   const categories = Object.keys(skillCategories) as CategoryKey[];
 
