@@ -1,8 +1,17 @@
 .contact-info {
   padding: 2rem;
-  background: var(--card-bg, #f8f8f8);
-  border-radius: 8px;
-  max-width: 400px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  max-width: 420px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+.contact-info h3 {
+  color: #fff;
+  margin: 0 0 0.75rem 0;
 }
 
 .contact-details {
@@ -28,13 +37,13 @@
 }
 
 .contact-item a {
-  color: var(--primary-color);
+  color: #18d26e;
   text-decoration: none;
   transition: color 0.3s;
 }
 
 .contact-item a:hover {
-  color: var(--primary-color-dark);
+  color: #15bb62;
 }
 
 .contact-item.flex {
@@ -44,4 +53,10 @@
 
 .contact-item.flex dt {
   margin-bottom: 1rem;
+}
+
+@media (max-width: 767px) {
+  .contact-info {
+    max-width: 100%;
+  }
 }
