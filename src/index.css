@@ -11,3 +11,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Global helpers */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Make space for fixed bottom dock on tiny screens when no App scope present */
+@supports (padding: max(0px)) {
+  body {
+    padding-bottom: max(0px, env(safe-area-inset-bottom));
+  }
+}

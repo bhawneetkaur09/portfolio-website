@@ -60,6 +60,15 @@ html {
   height: auto;
 }
 
+/* Respect device safe areas (iOS notch) */
+@supports (padding: max(0px)) {
+  .App-main {
+    padding-bottom: max(120px, env(safe-area-inset-bottom));
+    padding-left: max(0px, env(safe-area-inset-left));
+    padding-right: max(0px, env(safe-area-inset-right));
+  }
+}
+
 .App-main {
   display: flex;
   flex-direction: column;
@@ -181,6 +190,9 @@ html {
     margin-bottom: 1.5rem; /* Reduced mobile margin */
     font-size: clamp(1.5rem, 4vw, 2rem);
   }
+  .App-main {
+    gap: 36px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -192,6 +204,9 @@ html {
   .section-title {
     font-size: 1.5rem;
     margin-bottom: 1rem;
+  }
+  .App-main {
+    gap: 28px;
   }
 }
 

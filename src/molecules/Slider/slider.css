@@ -67,5 +67,16 @@
   opacity: 0.7;
 }
 
+/* Touch-friendly adjustments */
+@media (hover: none) and (pointer: coarse) {
+  .slider-control { padding: 14px; }
+  .slider-dots { bottom: 14px; gap: 8px; }
+  .slider-counter { bottom: 14px; right: 14px; }
+}
+
+@media (max-width: 480px) {
+  .slider-control.prev { left: 6px; }
+  .slider-control.next { right: 6px; }
+}
 
 
