@@ -1,9 +1,9 @@
-import React from 'react';
-import { Modal } from '../Modal/Modal';
-import { ModalHeader } from '../Modal/ModalHeader';
-import SocialLinks from '../SocialLinks/SocialLinks';
-import { successModalLabels } from '../../utils/modalLabels';
-import './successModal.css';
+import React from "react";
+import { Modal } from "../Modal/Modal";
+import { ModalHeader } from "../Modal/ModalHeader";
+import SocialLinks from "../SocialLinks/SocialLinks";
+import { successModalLabels } from "../../utils/modalLabels";
+import "./successModal.css";
 
 interface SuccessModalProps {
   isOpen: boolean;
@@ -12,18 +12,22 @@ interface SuccessModalProps {
   email: string;
 }
 
-const SuccessModal: React.FC<SuccessModalProps> = ({ 
-  isOpen, 
-  onClose, 
-  name, 
-  email 
+const SuccessModal: React.FC<SuccessModalProps> = ({
+  isOpen,
+  onClose,
+  name,
+  email,
 }) => {
-  const firstName = name ? name.split(' ')[0] : successModalLabels.thankYouDefault;
+  const firstName = name
+    ? name.split(" ")[0]
+    : successModalLabels.thankYouDefault;
 
   return (
     <Modal isOpen={isOpen} onClose={onClose} className="success-modal">
       <ModalHeader
-        icon={<span className="success-icon">{successModalLabels.successIcon}</span>}
+        icon={
+          <span className="success-icon">{successModalLabels.successIcon}</span>
+        }
         title={successModalLabels.title}
         onClose={onClose}
         closeLabel="Close success message"
@@ -43,9 +47,9 @@ const SuccessModal: React.FC<SuccessModalProps> = ({
       </section>
 
       <footer className="modal-footer">
-        <button 
+        <button
           type="button"
-          className="modal-button" 
+          className="modal-button"
           onClick={onClose}
           aria-label="Close modal"
         >

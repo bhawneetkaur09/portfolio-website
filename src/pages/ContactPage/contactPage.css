@@ -112,15 +112,27 @@
     gap: 1.25rem;
   }
   /* Show form first on mobile for easier action */
-  .contact-content .contact-form { order: -1; }
-  .contact-content .contact-info { order: 0; }
-  .contact-section { padding: 0 16px 110px; }
+  .contact-content .contact-form {
+    order: -1;
+  }
+  .contact-content .contact-info {
+    order: 0;
+  }
+  .contact-section {
+    padding: 0 16px 110px;
+  }
 }
 
 @media (max-width: 480px) {
-  .contact-section { padding: 0 12px 120px; }
-  .contact-info { padding: 1.25rem; }
-  .submit-button { width: 100%; }
+  .contact-section {
+    padding: 0 12px 120px;
+  }
+  .contact-info {
+    padding: 1.25rem;
+  }
+  .submit-button {
+    width: 100%;
+  }
 }
 
 .form-status.success {
