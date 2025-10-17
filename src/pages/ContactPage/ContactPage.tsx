@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { ContactForm } from "../../molecules/ContactForm/ContactForm";
 import { ContactInfo } from "../../molecules/ContactInfo/ContactInfo";
-import SuccessModal from '../../molecules/SuccessModal/SuccessModal';
+import SuccessModal from "../../molecules/SuccessModal/SuccessModal";
 import "./contactPage.css";
 
 interface ModalData {
@@ -46,8 +46,8 @@ const ContactPage: React.FC = () => {
           <ContactForm onSubmit={handleFormSubmit} />
         </div>
       </section>
-      
-      <SuccessModal 
+
+      <SuccessModal
         isOpen={modalData.isOpen}
         onClose={() => setModalData({ ...modalData, isOpen: false })}
         name={modalData.name}

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 import SocialLinks from "../../molecules/SocialLinks/SocialLinks";
 import {
   AUTHOR_NAME,
@@ -19,8 +19,8 @@ const HomePage: React.FC = () => {
     };
     // In case user lands mid-page or refreshes
     onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
