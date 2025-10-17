@@ -89,7 +89,10 @@
   justify-content: center;
 }
 
-.hero-title:hover { transform: translateY(-1px); transition: transform 0.2s ease; }
+.hero-title:hover {
+  transform: translateY(-1px);
+  transition: transform 0.2s ease;
+}
 
 .hero-content::before {
   content: "";

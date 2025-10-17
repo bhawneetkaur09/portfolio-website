@@ -1,6 +1,10 @@
 /* filepath: /Users/bhawneetkaur/Desktop/bhawneet-portfolio/portfolio/src/pages/ProjectsPage/projectsPage.css */
 .projects-page {
-  background: linear-gradient(135deg, rgba(24, 210, 110, 0.05), rgba(0, 0, 0, 0.95));
+  background: linear-gradient(
+    135deg,
+    rgba(24, 210, 110, 0.05),
+    rgba(0, 0, 0, 0.95)
+  );
   min-height: 100vh;
   width: 100%;
   overflow-x: hidden;
@@ -36,13 +40,21 @@
 }
 
 @keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 100% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
 }
 
 @keyframes underlineGlow {
-  0% { box-shadow: 0 0 5px rgba(24, 210, 110, 0.5); }
-  100% { box-shadow: 0 0 20px rgba(24, 210, 110, 0.8); }
+  0% {
+    box-shadow: 0 0 5px rgba(24, 210, 110, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(24, 210, 110, 0.8);
+  }
 }
 
 /* Enhanced slider container with glass morphism */
@@ -60,8 +72,7 @@
   -webkit-backdrop-filter: blur(10px);
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 
-    0 25px 50px rgba(0, 0, 0, 0.3),
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -79,9 +90,7 @@
 
 .slider-container:hover {
   transform: translateY(-8px);
-  box-shadow: 
-    0 35px 60px rgba(0, 0, 0, 0.4),
-    0 0 40px rgba(24, 210, 110, 0.1),
+  box-shadow: 0 35px 60px rgba(0, 0, 0, 0.4), 0 0 40px rgba(24, 210, 110, 0.1),
     inset 0 1px 0 rgba(255, 255, 255, 0.15);
 }
 
@@ -103,7 +112,7 @@
 }
 
 .project-image::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -140,7 +149,8 @@
 /* Modern project content styling */
 .project-content {
   padding: 2.5rem;
-  background: linear-gradient(135deg, 
+  background: linear-gradient(
+    135deg,
     rgba(15, 15, 15, 0.9) 0%,
     rgba(24, 210, 110, 0.05) 100%
   );
@@ -150,13 +160,14 @@
 }
 
 .project-content::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, 
+  background: linear-gradient(
+    90deg,
     transparent,
     rgba(24, 210, 110, 0.5),
     transparent
@@ -174,7 +185,7 @@
 }
 
 .project-title::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   bottom: -8px;
@@ -210,7 +221,8 @@
 
 .technology-tag {
   padding: 0.6rem 1.2rem;
-  background: linear-gradient(135deg, 
+  background: linear-gradient(
+    135deg,
     rgba(24, 210, 110, 0.15) 0%,
     rgba(24, 210, 110, 0.05) 100%
   );
@@ -228,13 +240,14 @@
 }
 
 .technology-tag::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, 
+  background: linear-gradient(
+    90deg,
     transparent,
     rgba(24, 210, 110, 0.2),
     transparent
@@ -279,13 +292,14 @@
 }
 
 .project-link::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, 
+  background: linear-gradient(
+    90deg,
     transparent,
     rgba(24, 210, 110, 0.1),
     transparent
@@ -369,7 +383,7 @@
 }
 
 .slider-dot::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   left: 50%;
@@ -413,19 +427,19 @@
     flex-direction: row;
     min-height: 450px;
   }
-  
+
   .project-image {
     width: 55%;
     height: auto;
   }
-  
+
   .project-content {
     width: 45%;
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
-  
+
   .slider-dots {
     bottom: 25px;
   }
@@ -435,32 +449,32 @@
   .projects-section {
     padding: 60px 20px;
   }
-  
+
   .section-title {
     font-size: 2.8rem;
     margin-bottom: 3rem;
   }
-  
+
   .project-content {
     padding: 2rem;
   }
-  
+
   .project-title {
     font-size: 1.8rem;
     margin-bottom: 1rem;
     text-align: center;
   }
-  
+
   .project-title::after {
     left: 50%;
     transform: translateX(-50%);
   }
-  
+
   .project-links {
     justify-content: center;
     flex-wrap: wrap;
   }
-  
+
   .slider-control {
     width: 45px;
     height: 45px;
@@ -471,52 +485,52 @@
   .projects-section {
     padding: 40px 15px;
   }
-  
+
   .section-title {
     font-size: 2.2rem;
   }
-  
+
   .project-image {
     height: 250px;
   }
-  
+
   .project-content {
     padding: 1.5rem;
   }
-  
+
   .project-title {
     font-size: 1.5rem;
   }
-  
+
   .project-description {
     font-size: 1rem;
     line-height: 1.6;
   }
-  
+
   .project-technologies {
     justify-content: center;
   }
-  
+
   .technology-tag {
     padding: 0.4rem 0.8rem;
     font-size: 0.8rem;
   }
-  
+
   .project-link {
     padding: 0.6rem 1.5rem;
     font-size: 0.9rem;
   }
-  
+
   .slider-control {
     width: 40px;
     height: 40px;
     font-size: 1.2rem;
   }
-  
+
   .slider-control.prev {
     left: 15px;
   }
-  
+
   .slider-control.next {
     right: 15px;
   }
@@ -526,16 +540,16 @@
   .project-image {
     height: 200px;
   }
-  
+
   .project-content {
     padding: 1.2rem;
   }
-  
+
   .project-link {
     padding: 0.5rem 1.2rem;
     font-size: 0.8rem;
   }
-  
+
   .section-title {
     font-size: 1.8rem;
   }

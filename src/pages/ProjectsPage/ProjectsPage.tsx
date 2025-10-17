@@ -1,29 +1,43 @@
-import React from 'react';
-import { projects } from '../../utils/projects';
-import { Slider } from '../../molecules/Slider/Slider';
-import './projectsPage.css';
+import React from "react";
+import { projects } from "../../utils/projects";
+import { Slider } from "../../molecules/Slider/Slider";
+import "./projectsPage.css";
 
-const ProjectCard: React.FC<{ project: typeof projects[0] }> = ({ project }) => (
+const ProjectCard: React.FC<{ project: (typeof projects)[0] }> = ({
+  project,
+}) => (
   <article className="project-slide">
     <figure className="project-image">
       <img src={project.imageUrl} alt={project.title} />
     </figure>
-    
+
     <header className="project-content">
       <h3 className="project-title">{project.title}</h3>
       <p className="project-description">{project.description}</p>
-      
+
       <ul className="project-technologies">
         {project.technologies.map((tech, index) => (
-          <li key={index} className="technology-tag">{tech}</li>
+          <li key={index} className="technology-tag">
+            {tech}
+          </li>
         ))}
       </ul>
-      
+
       <nav className="project-links">
-        <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="project-link">
+        <a
+          href={project.githubUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="project-link"
+        >
           Github
         </a>
-        <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="project-link">
+        <a
+          href={project.liveUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="project-link"
+        >
           Live Demo
         </a>
       </nav>
@@ -32,7 +46,6 @@ const ProjectCard: React.FC<{ project: typeof projects[0] }> = ({ project }) => 
 );
 
 const ProjectsPage: React.FC = () => {
-
   return (
     <main className="projects-page">
       <section className="projects-section">
