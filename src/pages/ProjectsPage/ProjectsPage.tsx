@@ -3,12 +3,14 @@ import { projects } from "../../utils/projects";
 import { Slider } from "../../molecules/Slider/Slider";
 import "./projectsPage.css";
 
-const ProjectCard: React.FC<{ project: (typeof projects)[0] }> = ({
-  project,
-}) => (
+const ProjectCard: React.FC<{ project: (typeof projects)[0] }> = ({ project }) => (
   <article className="project-slide">
     <figure className="project-image">
-      <img src={project.imageUrl} alt={project.title} />
+      {project.BannerComponent ? (
+        <project.BannerComponent className="project-inline-svg" preserveAspectRatio="xMidYMid slice" />
+      ) : (
+        <img src={project.imageUrl} alt={project.title} />
+      )}
     </figure>
 
     <header className="project-content">

@@ -141,6 +141,13 @@
   filter: brightness(0.9) contrast(1.1);
 }
 
+/* Inline SVG sizing (SVGR) */
+.project-inline-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
 .project-slide:hover .project-image img {
   transform: scale(1.08);
   filter: brightness(1) contrast(1.2);
