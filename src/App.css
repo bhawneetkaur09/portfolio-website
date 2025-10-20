@@ -78,9 +78,17 @@ html {
   position: relative;
   background-color: var(--color-background);
   scroll-behavior: smooth;
+  /* Enable page-like snapping between sections */
+  scroll-snap-type: y mandatory;
 }
 
 .App-main > section { padding: 48px 0; }
+/* Snap each section to the top and give it full viewport height */
+.App-main > section {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  min-height: 100vh;
+}
 
 .container {
   display: flex;
@@ -171,6 +179,24 @@ html {
   width: 72px;
   height: 4px;
   background: var(--color-gradient);
+}
+
+/* Section enter/leave transitions (applied via JS) */
+.section-transition {
+  opacity: 0;
+  transform: translateY(48px) scale(0.98);
+  transition: opacity 500ms ease, transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.section-transition.is-active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.section-transition.is-leaving {
+  opacity: 0.3;
+  transform: translateY(-24px) scale(0.98);
 }
 
 @media (max-width: 1024px) {
