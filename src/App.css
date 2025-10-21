@@ -73,8 +73,6 @@ html {
   display: flex;
   flex-direction: column;
   gap: 48px;
-  padding-top: 24px;
-  padding-bottom: 120px; /* space for bottom dock */
   position: relative;
   background-color: var(--color-background);
   scroll-behavior: smooth;
@@ -82,12 +80,44 @@ html {
   scroll-snap-type: y mandatory;
 }
 
-.App-main > section { padding: 48px 0; }
 /* Snap each section to the top and give it full viewport height */
 .App-main > section {
   scroll-snap-align: start;
   scroll-snap-stop: always;
   min-height: 100vh;
+  display: flex;
+  align-items: center; /* vertical centering of section content */
+}
+
+/* Global content container alignment for all pages */
+.App-main > section > .home-page,
+.App-main > section > .about-page,
+.App-main > section > .projects-page,
+.App-main > section > .contact-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.App-main > section > .home-page > *,
+.App-main > section > .about-page > .about-section,
+.App-main > section > .projects-page > .projects-section,
+.App-main > section > .contact-page > .contact-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+}
+
+/* Vertically center inner content blocks within the viewport height */
+.App-main > section > .about-page > .about-section,
+.App-main > section > .projects-page > .projects-section,
+.App-main > section > .contact-page > .contact-section {
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .container {
